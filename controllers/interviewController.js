@@ -1,5 +1,6 @@
 const Interview = require("../models/interview");
 const Student = require("../models/student");
+const Result = require("../models/result")
 
 module.exports.addInterview = async (req, res) => {
   const interview = new Interview({
@@ -24,7 +25,11 @@ module.exports.interviewAllocation = async (req, res) => {
   const studentIds = interview.students;
   const interviewIds = student.interviews
   if (!studentIds.includes(student.id)) {
-    
+    const result = new Result({
+      interview: student.id,
+      student: interview.id
+    });
+    const saveResult = await result.save();
     studentIds.push(student.id);
     interviewIds.push(interview.id)
     const interviewUpdate = await Interview.findOneAndUpdate(

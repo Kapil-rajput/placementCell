@@ -21,7 +21,7 @@
   <div>
     <form class="form-add-edit-delete" action="/resultAllocation" method="POST">
       <div>
-     <select name="companyName" id="companyName">
+     <select name="companyName" id="companyName" required>
       <option value="">Select Company Name</option>
       <% Interviews.forEach(function (interview){%>
         <option value="<%=interview.id%>"><%=interview.companyName%></option>
@@ -29,13 +29,22 @@
      </select>
       </div>       
       <div>
-     <select name="studentName" id="studentName">
+     <select name="studentName" id="studentName" required>
       <option value="">Select Student Name</option>
       <% Students.forEach(function (student){%>
-        <option value="<%=student.id%>"><%=student.name%></option>
+        <option value="<%=student.id%>"><%=student.name%> / <%=student.email%></option>
         <%})%>
      </select>
       </div>  
+      <div>
+     <select name="result" id="result" required>
+      <option value="">Select Result</option>
+      <option value="PASS">PASS</option>
+      <option value="FAIL">FAIL</option>
+      <option value="ON_HOLD">HOLD</option>
+      <option value="NOT_ATTEMPT">NOT ATTEMPT</option>
+     </select>
+      </div> 
       <div>
         <button type="submit" class="btn btn-dark">Allocate</button>
       </div>

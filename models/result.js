@@ -10,6 +10,10 @@ const resultSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Interview",
   },
+  result: {
+    type: String,
+    enum: ["PASS","FAIL","ON_HOLD","NOT_ATTEMPT"],
+  },
 });
 
 const Result = mongoose.model("Result", resultSchema);
