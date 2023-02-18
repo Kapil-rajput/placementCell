@@ -21,23 +21,21 @@
   <div>
     <form class="form-add-edit-delete" action="/resultAllocation" method="POST">
       <div>
-        <%  console.log(interviewDetails) %>
-        <input
-          type="text"
-          name="companyName"
-          id="companyName"
-          required
-          placeholder="Enter Company Name"
-        />
-      </div>
+     <select name="companyName" id="companyName">
+      <option value="">Select Company Name</option>
+      <% Interviews.forEach(function (interview){%>
+        <option value="<%=interview.id%>"><%=interview.companyName%></option>
+        <%})%>
+     </select>
+      </div>       
       <div>
-        <input
-          type="date"
-          name="date"
-          id="date"
-          required
-        />
-      </div>
+     <select name="studentName" id="studentName">
+      <option value="">Select Student Name</option>
+      <% Students.forEach(function (student){%>
+        <option value="<%=student.id%>"><%=student.name%></option>
+        <%})%>
+     </select>
+      </div>  
       <div>
         <button type="submit" class="btn btn-dark">Allocate</button>
       </div>

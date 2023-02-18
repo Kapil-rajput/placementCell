@@ -28,15 +28,11 @@ module.exports.interviewAllocation = async (req, res) => {
 };
 
 module.exports.resultAllocation = async (req, res) => {
-  const details = await Interview.find()
-    .populate("students", "name email")
-    .exec((err, interviewDetails) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.render("resultAllocation", {
-          interviewDetails: interviewDetails,
-        });
-      }
-    });
+  const interviews = await Interview.find().populate("students");
+  const students = await Student.find().populate("interviews");
+  res.render("resultAllocation", {
+    Students: students,
+    Interviews:interviews
+  })
+    
 };

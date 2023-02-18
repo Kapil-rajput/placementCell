@@ -24,6 +24,7 @@ module.exports.interviewAllocation = async (req, res) => {
   const studentIds = interview.students;
   const interviewIds = student.interviews
   if (!studentIds.includes(student.id)) {
+    
     studentIds.push(student.id);
     interviewIds.push(interview.id)
     const interviewUpdate = await Interview.findOneAndUpdate(
@@ -41,3 +42,6 @@ module.exports.interviewAllocation = async (req, res) => {
 };
 
 
+module.exports.resultAllocation = async (req, res) => {
+  
+}
