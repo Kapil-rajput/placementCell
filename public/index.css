@@ -79,3 +79,17 @@
   width: 200px;
   padding-left: 4px;
 }
+.dashboard-container{
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-container>a{
+  margin: 10px;
+  width: 300px;
+}
+.dashboard-container>a:hover{
+  color: red;
+}
