@@ -76,7 +76,8 @@
 .form-add-edit-delete > div > select {
   margin: 15px;
   padding: 10px;
-  width: 200px;
+  width: 300px;
+  text-align: center;
   padding-left: 4px;
 }
 .dashboard-container{

@@ -27,5 +27,6 @@ router.post("/login", userController.login);
 
 router.post("/addStudent", isAuthenticated, studentController.addStudent);
 router.post("/addInterview", isAuthenticated, interviewController.addInterview);
+router.post("/interviewAllocation", isAuthenticated, interviewController.interviewAllocation);
 
 module.exports = router;

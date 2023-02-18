@@ -6,6 +6,11 @@ const studentSchema = new Schema({
     type: String,
     required: true,
   },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
   batch: {
     type: String,
     required: true,

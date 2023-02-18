@@ -5,6 +5,7 @@ const Student = require("../models/student");
 module.exports.addStudent = async (req, res) => {
   const student = new Student({
     name: req.body.name,
+    email: req.body.email,
     batch: req.body.batch,
     college: req.body.college,
     status: req.body.status,

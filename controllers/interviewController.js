@@ -1,4 +1,5 @@
-const Interview = require("../models/interview")
+const Interview = require("../models/interview");
+const Student = require("../models/student");
 
 module.exports.addInterview = async (req, res) => {
   const interview = new Interview({
@@ -12,3 +13,31 @@ module.exports.addInterview = async (req, res) => {
     console.log(error);
   }
 };
+
+module.exports.interviewAllocation = async (req, res) => {
+  const data = {
+    companyName: req.body.companyName,
+    studentEmail: req.body.studentEmail,
+  };
+  const student = await Student.findOne({ email: data.studentEmail });
+  const interview = await Interview.findOne({ companyName: data.companyName });
+  const studentIds = interview.students;
+  const interviewIds = student.interviews
+  if (!studentIds.includes(student.id)) {
+    studentIds.push(student.id);
+    interviewIds.push(interview.id)
+    const interviewUpdate = await Interview.findOneAndUpdate(
+      { companyName: data.companyName },
+      { students: studentIds }
+    );
+    const studentUpdate = await Student.findOneAndUpdate(
+      { email: data.studentEmail },
+      {interviews: interviewIds}
+    );
+    res.redirect("/dashboard");
+  } else {
+    res.redirect("back");
+  }
+};
+
+
