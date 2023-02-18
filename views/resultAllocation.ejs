@@ -11,3 +11,38 @@
     <a href="/logout">Logout</a>
   </div>
 </div>
+
+
+
+<div class="add-Container">
+  <div>
+    <h4>Choose Email-Address of Student & Company name to Allocate</h4>
+  </div>
+  <div>
+    <form class="form-add-edit-delete" action="/resultAllocation" method="POST">
+      <div>
+        <%  console.log(interviewDetails) %>
+        <input
+          type="text"
+          name="companyName"
+          id="companyName"
+          required
+          placeholder="Enter Company Name"
+        />
+      </div>
+      <div>
+        <input
+          type="date"
+          name="date"
+          id="date"
+          required
+        />
+      </div>
+      <div>
+        <button type="submit" class="btn btn-dark">Allocate</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
