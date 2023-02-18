@@ -14,6 +14,9 @@ router.get("/register", (req, res) => res.render("register"));
 router.get("/dashboard", isAuthenticated, dashboardController.dashboard);
 router.get("/addstudent", isAuthenticated, dashboardController.addStudent);
 router.get("/addinterview", isAuthenticated, dashboardController.addInterview)
+router.get("/studentsList", isAuthenticated, dashboardController.studentsList);
+router.get("/interviewsList", isAuthenticated, dashboardController.interviewsList);
+router.get("/resultAllocation", isAuthenticated, dashboardController.resultAllocation);
 
 
 
