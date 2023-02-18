@@ -1,29 +1,30 @@
 const express = require("express");
 const User = require('../models/user');
-const passport = require('passport')
+const passport = require('passport');
+const bcrypt = require('bcrypt')
 
 module.exports.register = async (req, res) => {
-  const { name, username, password, isAdmin } = req.body;
+  const { name, username, password} = req.body;
 
   // Check if the email is already registered
   const existingUser = await User.findOne({ username });
   if (existingUser) {
     req.flash("errors", "That email is already registered.");
-    req.flash("userInput", { name, username, password, isAdmin });
+    req.flash("userInput", { name, username, password});
     return res.redirect("/register");
   }
 
   // Validate the password length
   if (password.length < 6) {
     req.flash("errors", "Password must be at least 6 characters long.");
-    req.flash("userInput", { name, username, password, isAdmin });
+    req.flash("userInput", { name, username, password});
     return res.redirect("/register");
   }
   // Hash the password
   const hashedPassword = await bcrypt.hash(password, 10);
 
   // Create a new user
-  const user = new User({ name, username, password: hashedPassword, isAdmin });
+  const user = new User({ name, username, password: hashedPassword });
   try {
     const savedUser = await user.save();
     req.flash("successMessage", "You are now registered and can log in.");
@@ -34,7 +35,7 @@ module.exports.register = async (req, res) => {
       "errors",
       "An error occurred while registering. Please try again later."
     );
-    req.flash("userInput", { name, username, password, isAdmin });
+    req.flash("userInput", { name, username, password});
     res.redirect("/register");
   }
 };

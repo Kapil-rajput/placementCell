@@ -1,0 +1,42 @@
+<div class="nav">
+  <div>
+    <h3>Placement Cell</h3>
+  </div>
+  <div class="menu-nav">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/addstudent">Add Student</a>
+    <a href="/jobs">Jobs</a>
+    <a href="/report">Report</a>
+    <a href="/logout">Logout</a>
+  </div>
+</div>
+
+<div class="add-Container">
+  <div>
+    <h4>Enter Company Name & Select Date To Add Interview</h4>
+  </div>
+  <div>
+    <form class="form-add-edit-delete" action="/addInterview" method="POST">
+      <div>
+        <input
+          type="text"
+          name="companyName"
+          id="companyName"
+          required
+          placeholder="Enter Company Name"
+        />
+      </div>
+      <div>
+        <input
+          type="date"
+          name="date"
+          id="date"
+          required
+        />
+      </div>
+      <div>
+        <button type="submit" class="btn btn-dark">Add Interview</button>
+      </div>
+    </form>
+  </div>
+</div>

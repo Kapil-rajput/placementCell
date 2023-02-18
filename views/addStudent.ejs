@@ -1,0 +1,86 @@
+<div class="nav">
+  <div>
+    <h3>Placement Cell</h3>
+  </div>
+  <div class="menu-nav">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/addinterview">Add Interview</a>
+    <a href="/jobs">Jobs</a>
+    <a href="/report">Report</a>
+    <a href="/logout">Logout</a>
+  </div>
+</div>
+
+<div class="add-Container">
+  <div>
+    <h4>Enter detail of Student to Add</h4>
+  </div>
+  <div>
+    <form class="form-add-edit-delete" action="/addStudent" method="POST">
+      <div>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="Enter Student Name"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="batch"
+          id="batch"
+          required
+          placeholder="Enter Batch Name"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="college"
+          id="college"
+          required
+          placeholder="Enter College Name"
+        />
+      </div>
+      <div>
+        <select name="status" id="status" required>
+          <option value="">Status</option>
+          <option value="placed">Placed</option>
+          <option value="not_placed">Not Placed</option>
+        </select>
+      </div>
+      <div>
+        <input
+          type="number"
+          name="dsa"
+          id="dsa"
+          required
+          placeholder="DSA Final Score"
+        />
+      </div>
+      <div>
+        <input
+          type="number"
+          name="webd"
+          id="webd"
+          required
+          placeholder="WEB Developer Score"
+        />
+      </div>
+      <div>
+        <input
+          type="number"
+          name="react"
+          id="react"
+          required
+          placeholder="React Final Score"
+        />
+      </div>
+      <div>
+        <button type="submit" class="btn btn-dark">Add Student</button>
+      </div>
+    </form>
+  </div>
+</div>
