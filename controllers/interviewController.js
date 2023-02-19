@@ -9,7 +9,7 @@ module.exports.addInterview = async (req, res) => {
   });
   try {
     const saveInterview = await interview.save();
-    res.redirect("/dashboard");
+    res.redirect("/addInterview");
   } catch (error) {
     console.log(error);
   }
