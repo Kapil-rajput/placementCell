@@ -28,6 +28,7 @@ module.exports.interviewAllocation = async (req, res) => {
     const result = new Result({
       student: student.id,
       interview: interview.id,
+      result: "NOT_ATTEMPT",
     });
     const saveResult = await result.save();
     studentIds.push(student.id);

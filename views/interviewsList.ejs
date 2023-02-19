@@ -24,7 +24,7 @@
         </tr>
         <% Results.forEach(function (result){%>
         <tr>
-            <td><%=result.interview.date%></td>
+            <td><%=result.interview.date.toLocaleDateString()%></td>
             <td><%=result.interview.companyName%></td>
             <td><%=result.student.name%></td>
             <td><%=result.student.email%></td>
