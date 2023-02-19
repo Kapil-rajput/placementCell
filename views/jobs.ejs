@@ -10,3 +10,26 @@
     <a href="/logout">Logout</a>
   </div>
 </div>
+
+<div class="joblist-container">
+  <h3>Available Opportunities</h3>
+  <% for(var i=0 ; i< 30 ; i++) { %>
+  <div class="jobsList-container">
+    <div>
+      <img src="<%= jobs[i].company_logo %>" />
+    </div>
+    <div class="applyflex">
+      <div>
+        <h2><%=jobs[i].company_name%></h2>
+        <h4><%=jobs[i].title%></h4>
+        <h6>Job Type: <%=jobs[i].job_type%></h6>
+        <h6>Location: <%=jobs[i].candidate_required_location%></h6>
+        <h6>Publication Date: <%= jobs[i].publication_date %></h6>
+      </div>
+      <div>
+        <a class="btn btn-dark" href="<%= jobs[i].url %>">Apply</a>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>

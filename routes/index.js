@@ -4,6 +4,7 @@ const userController = require('../controllers/userController');
 const dashboardController = require('../controllers/dashboardController');
 const studentController = require('../controllers/studentController');
 const interviewController = require('../controllers/interviewController')
+const jobController = require('../controllers/jobController')
 const { initializingPassport, isAuthenticated } = require("../config/passport");
 
 
@@ -16,7 +17,7 @@ router.get("/addstudent", isAuthenticated, dashboardController.addStudent);
 router.get("/addinterview", isAuthenticated, dashboardController.addInterview)
 router.get("/interviewAllocation",isAuthenticated,dashboardController.interviewAllocation);
 router.get("/resultAllocation", isAuthenticated, dashboardController.resultAllocation);
-
+router.get("/jobs",isAuthenticated,jobController.jobs)
 router.get("/studentsList", isAuthenticated, studentController.studentsList);
 router.get("/interviewsList", isAuthenticated, interviewController.interviewsList);
 
