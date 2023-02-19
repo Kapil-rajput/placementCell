@@ -65,3 +65,10 @@ module.exports.resultAllocation = async (req, res) => {
 };
 
 
+module.exports.interviewsList = async (req, res) => {
+  const results = await Result.find().populate('student interview').exec(function(err, result){
+    res.render("interviewsList", {
+      Results:result
+    })
+  })
+};

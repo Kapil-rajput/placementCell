@@ -11,3 +11,35 @@
     <a href="/logout">Logout</a>
   </div>
 </div>
+
+<div class="list-container">
+   <%Students.forEach(function (student){%>
+  <div class="singleList-container">
+    <div>
+      <h3><%=student.name%></h3>
+    </div>
+    <div class="description">
+      <table>
+        <tr>
+          <th>Batch</th>
+          <th>College</th>
+          <th>Email</th>
+          <th>DSA Score</th>
+          <th>React Score</th>
+          <th>WEB Developer Score</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td><%=student.batch%></td>
+          <td><%=student.college%></td>
+          <td><%=student.email%></td>
+          <td><%=student.dsa%></td>
+          <td><%=student.react%></td>
+          <td><%=student.webd%></td>
+          <td><%=student.status%></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <%})%>
+</div>

@@ -15,11 +15,6 @@ module.exports.addInterview = async (req, res) => {
 };
 
 
-
-module.exports.interviewsList = async (req, res) => {
-  res.render("interviewsList");
-};
-
 module.exports.interviewAllocation = async (req, res) => {
   const students = await Student.find();
   const interviews = await Interview.find();

@@ -94,3 +94,45 @@
 .dashboard-container>a:hover{
   color: red;
 }
+
+.list-container{
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.singleList-container{
+  padding: 20px;
+  border: 1px solid lightgrey;
+  margin-bottom: 40px;
+}
+.singleList-container>div>h3{
+  text-decoration: underline;
+}
+.description{
+  margin: 30px;
+}
+table{
+  text-align: center;
+}
+th{
+  width: 300px;
+  padding: 10px 0;
+  border: 1px solid grey;
+}
+td{
+  width: 300px;
+  padding: 10px 0;
+  border: 1px solid grey;
+}
+th:nth-child(even){
+  background-color: bisque;
+}
+th:nth-child(odd){
+  background-color: aquamarine;
+}
+td:nth-child(even){
+    background-color: aquamarine;
+}
+td:nth-child(odd){
+  background-color: bisque;
+}

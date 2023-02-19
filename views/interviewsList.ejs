@@ -11,3 +11,25 @@
     <a href="/logout">Logout</a>
   </div>
 </div>
+
+
+<div class="list-container">
+    <table>
+        <tr>
+            <th>Interview Date</th>
+            <th>Company Name</th>
+            <th>Student Name</th>
+            <th>Student Email</th>
+            <th>Result</th>
+        </tr>
+        <% Results.forEach(function (result){%>
+        <tr>
+            <td><%=result.interview.date%></td>
+            <td><%=result.interview.companyName%></td>
+            <td><%=result.student.name%></td>
+            <td><%=result.student.email%></td>
+            <td><%=result.result%></td>
+        </tr>
+        <%})%>
+    </table>
+</div>

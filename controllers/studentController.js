@@ -22,5 +22,8 @@ module.exports.addStudent = async (req, res) => {
 };
 
 module.exports.studentsList = async (req, res) => {
-  res.render("studentsList");
+  const student = await Student.find();
+  res.render("studentsList", {
+    Students:student
+  });
 };
