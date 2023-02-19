@@ -17,6 +17,7 @@ router.get("/addstudent", isAuthenticated, dashboardController.addStudent);
 router.get("/addinterview", isAuthenticated, dashboardController.addInterview)
 router.get("/interviewAllocation",isAuthenticated,dashboardController.interviewAllocation);
 router.get("/resultAllocation", isAuthenticated, dashboardController.resultAllocation);
+router.get("/report",isAuthenticated,dashboardController.report)
 router.get("/jobs",isAuthenticated,jobController.jobs)
 router.get("/studentsList", isAuthenticated, studentController.studentsList);
 router.get("/interviewsList", isAuthenticated, interviewController.interviewsList);
