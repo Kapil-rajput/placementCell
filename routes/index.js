@@ -14,11 +14,11 @@ router.get("/register", (req, res) => res.render("register"));
 router.get("/dashboard", isAuthenticated, dashboardController.dashboard);
 router.get("/addstudent", isAuthenticated, dashboardController.addStudent);
 router.get("/addinterview", isAuthenticated, dashboardController.addInterview)
-router.get("/studentsList", isAuthenticated, dashboardController.studentsList);
+router.get("/interviewsList", isAuthenticated, dashboardController.interviewsList);
 router.get("/interviewAllocation",isAuthenticated,dashboardController.interviewAllocation);
 router.get("/resultAllocation", isAuthenticated, dashboardController.resultAllocation);
 
-
+router.get("/studentsList", isAuthenticated, studentController.studentsList);
 
 router.get("/logout", userController.logout);
 router.post("/register", userController.register);

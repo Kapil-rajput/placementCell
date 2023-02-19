@@ -1,6 +1,6 @@
 const Student = require("../models/student");
-
-
+const Interview = require("../models/interview");
+const Result = require("../models/result");
 
 module.exports.addStudent = async (req, res) => {
   const student = new Student({
@@ -21,4 +21,6 @@ module.exports.addStudent = async (req, res) => {
   }
 };
 
-
+module.exports.studentsList = async (req, res) => {
+  res.render("studentsList");
+};

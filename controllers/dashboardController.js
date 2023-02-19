@@ -14,8 +14,10 @@ module.exports.addInterview = async (req, res) => {
   res.render("addInterview");
 };
 
-module.exports.studentsList = async (req, res) => {
-  res.render("studentsList");
+
+
+module.exports.interviewsList = async (req, res) => {
+  res.render("interviewsList");
 };
 
 module.exports.interviewAllocation = async (req, res) => {
