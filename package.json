@@ -19,6 +19,7 @@
   "description": "backend skill test ",
   "main": "index.js",
   "scripts": {
+     "dev": "node index.js",
     "start": " nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
