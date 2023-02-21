@@ -1,7 +1,9 @@
+//importing all the collection of database
 const Interview = require("../models/interview");
 const Student = require("../models/student");
 const Result = require("../models/result");
 
+// function to handle post request to save interview
 module.exports.addInterview = async (req, res) => {
   const interview = new Interview({
     companyName: req.body.companyName,
@@ -15,6 +17,8 @@ module.exports.addInterview = async (req, res) => {
   }
 };
 
+
+// function to save the allocation of interview to the student 
 module.exports.interviewAllocation = async (req, res) => {
   const data = {
     companyName: req.body.companyName,
@@ -48,7 +52,7 @@ module.exports.interviewAllocation = async (req, res) => {
 };
 
 
-
+// fucntion to save the student and company with the result
 module.exports.resultAllocation = async (req, res) => {
   const data = {
     companyName: req.body.companyName,
@@ -66,6 +70,7 @@ module.exports.resultAllocation = async (req, res) => {
 };
 
 
+// function to display all the interviews with the student
 module.exports.interviewsList = async (req, res) => {
   const results = await Result.find().populate('student interview').exec(function(err, result){
     res.render("interviewsList", {

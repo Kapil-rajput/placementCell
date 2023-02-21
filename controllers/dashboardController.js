@@ -1,22 +1,33 @@
+//importing database students for students
+//interview for all interview
+//result for all the interview result
+// convertor for csv report 
+//fs to read and write file
 const Student = require("../models/student");
 const Interview = require("../models/interview");
 const Result = require("../models/result");
 const convertor = require("objects-to-csv");
 const fs = require('fs')
 
+
+// for rendering dashboard
 module.exports.dashboard = (req, res) => {
   res.render("dashboard");
 };
 
+
+//for rendering add student page
 module.exports.addStudent = async (req, res) => {
   res.render("addStudent");
 };
 
+//for rendering add interview page
 module.exports.addInterview = async (req, res) => {
   res.render("addInterview");
 };
 
 
+//for rendering interview allocation page
 module.exports.interviewAllocation = async (req, res) => {
   const students = await Student.find();
   const interviews = await Interview.find();
@@ -26,6 +37,8 @@ module.exports.interviewAllocation = async (req, res) => {
   });
 };
 
+
+// for rendering result allocation page
 module.exports.resultAllocation = async (req, res) => {
   const interviews = await Interview.find().populate("students");
   const students = await Student.find().populate("interviews");
@@ -37,6 +50,7 @@ module.exports.resultAllocation = async (req, res) => {
 };
 
 
+// for dwonloading report of students
 module.exports.report = async (req, res) => {
    const studentList = await Student.find({});
     const dataPresent = [];

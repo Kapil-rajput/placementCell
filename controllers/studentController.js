@@ -2,6 +2,7 @@ const Student = require("../models/student");
 const Interview = require("../models/interview");
 const Result = require("../models/result");
 
+// fucntion to add new student
 module.exports.addStudent = async (req, res) => {
   const student = new Student({
     name: req.body.name,
@@ -21,6 +22,8 @@ module.exports.addStudent = async (req, res) => {
   }
 };
 
+
+// function to add new student to the list
 module.exports.studentsList = async (req, res) => {
   const student = await Student.find();
   res.render("studentsList", {
